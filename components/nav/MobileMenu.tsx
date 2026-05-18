@@ -6,10 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import { brand, nav, contact } from "@/lib/content";
 
-/**
- * Full-screen overlay menu — deep forest on cream typography (UJ pattern).
- * Items are large centered display serif. Contact info at the bottom.
- */
 export function MobileMenu({
   open,
   onClose,
@@ -17,7 +13,6 @@ export function MobileMenu({
   open: boolean;
   onClose: () => void;
 }) {
-  // Lock body scroll while open
   useEffect(() => {
     if (open) {
       const prev = document.body.style.overflow;
@@ -37,9 +32,13 @@ export function MobileMenu({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.28, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.22, ease: [0.23, 1, 0.32, 1] }}
         >
-          <div className="flex items-center justify-between px-6 h-[68px]">
+          {/* Header row — safe-area top */}
+          <div
+            className="flex items-center justify-between px-5 h-[64px]"
+            style={{ paddingTop: "env(safe-area-inset-top)" }}
+          >
             <Image
               src="/brand/wingspan-logo-white-original.png"
               alt={brand.name}
@@ -47,32 +46,34 @@ export function MobileMenu({
               height={1563}
               className="h-9 w-auto"
             />
+            {/* 44×44 tap target for close */}
             <button
               type="button"
               onClick={onClose}
               aria-label="Close menu"
-              className="text-on-dark text-2xl leading-none"
+              className="text-on-dark flex items-center justify-center w-11 h-11 -mr-1 text-xl"
             >
               ✕
             </button>
           </div>
 
-          <div className="flex-1 flex flex-col justify-center items-center gap-7 px-6">
+          {/* Nav items */}
+          <div className="flex-1 flex flex-col justify-center items-center gap-6 px-6">
             {nav.map((item, i) => (
               <motion.div
                 key={item.href}
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: 0.08 + i * 0.06,
-                  duration: 0.5,
+                  delay: 0.06 + i * 0.05,
+                  duration: 0.45,
                   ease: [0.23, 1, 0.32, 1],
                 }}
               >
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className="display uppercase text-[clamp(2.5rem,11vw,4.5rem)] leading-none tracking-[-0.018em] text-on-dark hover:text-cream transition-colors duration-[160ms]"
+                  className="display uppercase text-[clamp(2.8rem,11vw,4.5rem)] leading-none tracking-[-0.018em] text-on-dark hover:text-cream active:text-cream transition-colors duration-[160ms]"
                 >
                   {item.label}
                 </Link>
@@ -80,7 +81,11 @@ export function MobileMenu({
             ))}
           </div>
 
-          <div className="px-6 pb-10 text-center">
+          {/* Contact info — safe-area bottom */}
+          <div
+            className="px-6 text-center"
+            style={{ paddingBottom: "max(40px, calc(32px + env(safe-area-inset-bottom)))" }}
+          >
             <div className="eyebrow text-on-dark/60 mb-3">Contact</div>
             <a
               href={`tel:${contact.phone[0].replace(/\s|-/g, "")}`}

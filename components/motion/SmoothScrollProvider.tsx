@@ -3,21 +3,19 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-/**
- * Lenis smooth-scroll wrapper.
- * Mounts once at the root. Sets html.lenis + html.lenis-smooth so we can opt elements
- * in/out of native scroll behavior via CSS.
- */
 export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window === "undefined") return;
+    // Touch devices (iPhone, iPad, Android) have excellent native momentum scroll built in.
+    // Lenis intercepts touch events and replaces them with JS-driven scroll, which fights
+    // iOS's rubber-band physics and causes visible jank / "glitching". Skip it entirely.
+    if (window.matchMedia("(pointer: coarse)").matches) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const lenis = new Lenis({
       duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // ~ ease-out-expo
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 1.3,
       wheelMultiplier: 1.0,
     });
 

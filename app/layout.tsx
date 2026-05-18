@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/motion/SmoothScrollProvider";
@@ -36,6 +36,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
   },
+};
+
+// viewport-fit=cover lets content extend behind the iPhone notch / Dynamic Island
+// and home indicator so we can then pad safely with env(safe-area-inset-*).
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

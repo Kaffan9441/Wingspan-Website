@@ -2,47 +2,37 @@
 
 /* =========================================
    Wingspan Innovations — Design Tokens
-   Sampled from live wingspan.pk + modernized per v1.0 plan
    ========================================= */
 
 :root {
-  /* Brand */
   --brand-forest: #0F3D2E;
   --brand-forest-light: #1F5841;
-  --brand-forest-legacy: #006600;     /* exact original sampled from logo */
+  --brand-forest-legacy: #006600;
 
-  /* Heritage layer */
-  --heritage-cream: #E0DAD2;          /* exact match from wingspan.pk H1 */
-  --heritage-warm-beige: #CAB6A1;     /* exact match from wingspan.pk diamond */
+  --heritage-cream: #E0DAD2;
+  --heritage-warm-beige: #CAB6A1;
 
-  /* Surfaces */
-  --surface-white: #FBFAF7;           /* warm off-white */
-  --surface-paper: #F5F1EA;           /* slight step down for the page bg */
-  --surface-charcoal: #1A1814;        /* warm charcoal, never pure black */
+  --surface-white: #FBFAF7;
+  --surface-paper: #F5F1EA;
+  --surface-charcoal: #1A1814;
 
-  /* Text */
   --text-primary: #1A1814;
   --text-muted: #5A5651;
   --text-on-dark: #F2EDE5;
 
-  /* Accent metallic */
-  --accent-metallic: #A8896A;          /* brushed brass, used sparingly */
+  --accent-metallic: #A8896A;
   --hairline: rgba(168, 137, 106, 0.45);
 
-  /* Editorial cobalt — used only inside scrapbook handwriting and tape (not as UI fill) */
   --cobalt-ink: #1F3A8A;
 
-  /* Easings — exact Linear constants */
   --ease-out-quad:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-out-quint: cubic-bezier(0.23, 1.00, 0.32, 1.00);
   --ease-out-expo:  cubic-bezier(0.19, 1.00, 0.22, 1.00);
 
-  /* Durations */
   --dur-micro:  160ms;
   --dur-small:  500ms;
   --dur-large:  720ms;
 
-  /* Background / foreground tokens for shadcn-style consumers */
   --background: var(--surface-paper);
   --foreground: var(--text-primary);
 }
@@ -89,11 +79,11 @@ html, body {
 }
 
 html {
-  /* Lenis will manage smooth scrolling. Until then, native smooth feels OK. */
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--surface-paper);
+  /* Prevent elastic overscroll from showing a gap behind the fixed header */
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -106,7 +96,7 @@ body {
   margin: 0;
 }
 
-/* When Lenis is active it will toggle html.lenis */
+/* Lenis desktop classes — only activates when Lenis initialises on non-touch devices */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -120,7 +110,24 @@ html.lenis-smooth body {
   overflow: hidden;
 }
 
-/* Reduced motion: short-circuit all our motion */
+/* =========================================
+   Mobile / touch globals
+   ========================================= */
+
+/* Remove the default blue tap flash on all tappable elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* On mobile, use dynamic viewport height so full-screen sections don't get
+   clipped behind the iOS address bar or home indicator.
+   dvh = the viewport height that adjusts as browser chrome shows/hides. */
+@supports (height: 100dvh) {
+  .h-screen   { height: 100dvh; }
+  .min-h-screen { min-height: 100dvh; }
+}
+
+/* Reduced motion: short-circuit all animations */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -134,8 +141,6 @@ html.lenis-smooth body {
    Typography utility classes
    ========================================= */
 
-/* .display / .display-italic — font-family + letter-spacing only.
-   Font-weight is NOT set here so Tailwind utilities (font-medium / font-semibold) win. */
 .display {
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
   letter-spacing: -0.022em;
@@ -149,7 +154,6 @@ html.lenis-smooth body {
   line-height: 1.05;
 }
 
-/* .eyebrow — color NOT set here so Tailwind utilities can control it. Default in JSX. */
 .eyebrow {
   font-family: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 12px;
@@ -172,15 +176,15 @@ html.lenis-smooth body {
 }
 
 /* =========================================
-   CTA — hairline transparent pill
-   No filled buttons anywhere on the site.
+   CTA pill — hairline transparent button
    ========================================= */
 
 .cta-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  padding: 0.7em 1.5em;
+  /* 48px tall touch target on mobile */
+  padding: 0.8em 1.6em;
   font-family: var(--font-display), Georgia, serif;
   font-size: 15px;
   letter-spacing: 0.01em;
@@ -196,7 +200,8 @@ html.lenis-smooth body {
     background var(--dur-micro) var(--ease-out-quad);
 }
 
-.cta-pill:hover {
+.cta-pill:hover,
+.cta-pill:active {
   color: var(--brand-forest);
   border-color: var(--accent-metallic);
 }
@@ -206,13 +211,14 @@ html.lenis-smooth body {
   border-color: rgba(242, 237, 229, 0.35);
 }
 
-.cta-pill--on-dark:hover {
+.cta-pill--on-dark:hover,
+.cta-pill--on-dark:active {
   color: var(--text-on-dark);
   border-color: var(--text-on-dark);
 }
 
 /* =========================================
-   Hairline rule used between sections
+   Hairline rule
    ========================================= */
 
 .hairline {

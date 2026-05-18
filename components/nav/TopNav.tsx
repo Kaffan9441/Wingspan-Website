@@ -6,19 +6,17 @@ import { useEffect, useState } from "react";
 import { nav, brand } from "@/lib/content";
 import { MobileMenu } from "./MobileMenu";
 
-/**
- * Scroll-state-aware top nav.
- *
- * - Over the dark hero (top of page): fully transparent, white logo + white links.
- * - After scrolling past the hero (~85vh): translucent cream backdrop with blur,
- *   dark logo + dark links + hairline bottom border.
- *
- * The threshold uses window.innerHeight * 0.85 so the transition fires roughly when
- * the hero exits the viewport. No backdrop ever sits on top of the hero itself.
- */
 export function TopNav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  // backdrop-filter: blur() on a position:fixed element is a known iOS Safari bug —
+  // the blur composites against a stale snapshot while scrolling, causing visible jitter.
+  // Use a solid, more-opaque background on touch devices instead.
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
 
   useEffect(() => {
     const compute = () => {
@@ -34,32 +32,40 @@ export function TopNav() {
     };
   }, []);
 
+  const scrolledStyle = scrolled
+    ? {
+        background: isTouch
+          ? "rgba(245, 241, 234, 0.97)"
+          : "rgba(245, 241, 234, 0.78)",
+        backdropFilter: isTouch ? "none" : "blur(20px) saturate(140%)",
+        WebkitBackdropFilter: isTouch ? "none" : "blur(20px) saturate(140%)",
+        borderBottom: "1px solid rgba(168,137,106,0.25)",
+      }
+    : {
+        background: "transparent",
+        backdropFilter: "none",
+        WebkitBackdropFilter: "none",
+        borderBottom: "1px solid transparent",
+      };
+
   return (
     <>
       <header
-        className="fixed top-0 inset-x-0 z-[80] h-[80px] md:h-[96px] flex items-center px-6 md:px-12 transition-all duration-300"
-        style={{
-          backdropFilter: scrolled ? "blur(18px) saturate(140%)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(18px) saturate(140%)" : "none",
-          background: scrolled ? "rgba(245, 241, 234, 0.72)" : "transparent",
-          borderBottom: scrolled
-            ? "1px solid rgba(168,137,106,0.25)"
-            : "1px solid transparent",
-        }}
+        className="fixed top-0 inset-x-0 z-[80] h-[64px] md:h-[88px] flex items-center px-5 md:px-12 transition-all duration-300"
+        style={scrolledStyle}
       >
         <Link
           href="/"
           aria-label={brand.name}
           className="flex items-center gap-2 select-none relative"
         >
-          {/* Two logos stacked, fade between them based on scroll state */}
           <Image
             src="/brand/wingspan-logo-original.png"
             alt=""
             width={400}
             height={400}
             priority
-            className={`h-14 md:h-[72px] w-auto transition-opacity duration-300 ${
+            className={`h-10 md:h-[64px] w-auto transition-opacity duration-300 ${
               scrolled ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -69,7 +75,7 @@ export function TopNav() {
             width={400}
             height={400}
             priority
-            className={`absolute left-0 top-1/2 -translate-y-1/2 h-14 md:h-[72px] w-auto transition-opacity duration-300 ${
+            className={`absolute left-0 top-1/2 -translate-y-1/2 h-10 md:h-[64px] w-auto transition-opacity duration-300 ${
               scrolled ? "opacity-0" : "opacity-100"
             }`}
           />
@@ -102,13 +108,14 @@ export function TopNav() {
               scrolled ? "" : "cta-pill--on-dark"
             }`}
           >
-            Schedule a Free Consultation
+            Free Consultation
           </Link>
         </nav>
 
+        {/* Mobile hamburger */}
         <button
           type="button"
-          className="md:hidden ml-auto flex flex-col gap-[5px] p-2 -mr-2"
+          className="md:hidden ml-auto flex flex-col gap-[5px] p-3 -mr-3 min-w-[44px] min-h-[44px] items-center justify-center"
           aria-label="Open menu"
           onClick={() => setMenuOpen(true)}
         >
