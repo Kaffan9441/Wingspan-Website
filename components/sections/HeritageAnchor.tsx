@@ -1,6 +1,5 @@
 import { heritageAnchor } from "@/lib/content";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
-import { TravelingPlane } from "@/components/motion/TravelingPlane";
 
 export function HeritageAnchor() {
   return (
@@ -40,14 +39,6 @@ export function HeritageAnchor() {
               </p>
             </ScrollReveal>
           </div>
-        </div>
-
-        <div className="mt-16 md:mt-32">
-          <TravelingPlane
-            startLabel="Since 1985"
-            endLabel="Karachi · Pakistan"
-            annotation="Across five practices. Across decades."
-          />
         </div>
       </div>
     </section>
