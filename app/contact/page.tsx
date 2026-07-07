@@ -59,31 +59,13 @@ export default function ContactPage() {
               · DIRECTLY ·
             </div>
             <div className="space-y-3 text-[14px] md:text-[15px]">
-              {contact.phone.map((p) => (
-                <a
-                  key={p}
-                  href={`tel:${p.replace(/\s|-/g, "")}`}
-                  className="block text-ink hover:text-forest transition-colors py-0.5"
-                >
-                  {p}
-                </a>
-              ))}
               <a
                 href={`mailto:${contact.email}`}
-                className="block text-ink hover:text-forest transition-colors pt-2"
+                className="block text-ink hover:text-forest transition-colors py-0.5 break-all"
               >
                 {contact.email}
               </a>
             </div>
-            <div className="eyebrow text-muted tracking-[0.22em] mt-8 md:mt-10 mb-3">
-              Visit
-            </div>
-            <address className="not-italic text-[14px] md:text-[15px] text-ink/85 space-y-0.5">
-              <div>{contact.address.line1}</div>
-              <div>{contact.address.line2}</div>
-              <div>{contact.address.line3}</div>
-              <div>{contact.address.country}</div>
-            </address>
           </ScrollReveal>
 
           {/* Form */}

@@ -29,7 +29,7 @@ export function PhilosophyQuote() {
                 filter: "saturate(0.55) brightness(0.85)",
               }}
               role="img"
-              aria-label="Atmosphere — runway at dawn"
+              aria-label="Atmosphere: runway at dawn"
             />
           </CounterScrollPlate>
 
@@ -65,7 +65,7 @@ export function PhilosophyQuote() {
                 filter: "saturate(0.55) brightness(0.85)",
               }}
               role="img"
-              aria-label="Atmosphere — Karachi terminal at twilight"
+              aria-label="Atmosphere: Karachi terminal at twilight"
             />
           </CounterScrollPlate>
         </div>

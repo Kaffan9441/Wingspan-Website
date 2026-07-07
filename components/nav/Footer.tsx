@@ -20,7 +20,7 @@ export function Footer() {
             className="w-[88px] h-auto"
           />
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-12">
           <div>
             <div className="eyebrow text-muted mb-4">Wingspan</div>
             <ul className="space-y-2.5">
@@ -40,35 +40,15 @@ export function Footer() {
           <div>
             <div className="eyebrow text-muted mb-4">Contact</div>
             <ul className="space-y-2.5 text-[15px]">
-              {contact.phone.map((p) => (
-                <li key={p}>
-                  <a
-                    href={`tel:${p.replace(/\s|-/g, "")}`}
-                    className="text-ink hover:text-forest transition-colors"
-                  >
-                    {p}
-                  </a>
-                </li>
-              ))}
               <li>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="text-ink hover:text-forest transition-colors"
+                  className="text-ink hover:text-forest transition-colors break-all"
                 >
                   {contact.email}
                 </a>
               </li>
             </ul>
-          </div>
-
-          <div>
-            <div className="eyebrow text-muted mb-4">Visit</div>
-            <address className="not-italic text-[15px] text-ink/85 space-y-0.5">
-              <div>{contact.address.line1}</div>
-              <div>{contact.address.line2}</div>
-              <div>{contact.address.line3}</div>
-              <div>{contact.address.country}</div>
-            </address>
           </div>
 
           <div>

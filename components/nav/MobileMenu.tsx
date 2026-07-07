@@ -88,14 +88,8 @@ export function MobileMenu({
           >
             <div className="eyebrow text-on-dark/60 mb-3">Contact</div>
             <a
-              href={`tel:${contact.phone[0].replace(/\s|-/g, "")}`}
-              className="block display text-on-dark text-xl tracking-[-0.01em]"
-            >
-              {contact.phone[0]}
-            </a>
-            <a
               href={`mailto:${contact.email}`}
-              className="block text-on-dark/80 text-sm mt-1 tracking-wide"
+              className="block display text-on-dark text-lg tracking-[-0.01em] break-all"
             >
               {contact.email}
             </a>

@@ -50,7 +50,7 @@ export function GlobalReach() {
             <ScrollReveal delay={0.16}>
               <p className="text-on-dark/75 text-[15px] md:text-[16px] leading-[1.75] max-w-[44ch] mb-6">
                 From our base in Karachi, Wingspan Innovations works alongside airlines,
-                airports, and authorities across Pakistan, the Gulf, and beyond —
+                airports, and authorities across Pakistan, the Middle East, Africa, and beyond,
                 bringing the same standard of excellence to every runway, hangar, and boardroom.
               </p>
             </ScrollReveal>
@@ -59,7 +59,8 @@ export function GlobalReach() {
               <div className="flex flex-col gap-3 mb-10 md:mb-12">
                 {[
                   ["Pakistan", "Headquarters & primary operations"],
-                  ["Gulf Region", "UAE · Qatar · Saudi Arabia · Oman"],
+                  ["Middle East", "UAE · Qatar · Saudi Arabia · Oman"],
+                  ["Africa", "Advisory & program engagements"],
                   ["Europe", "United Kingdom · Germany · Turkey"],
                 ].map(([region, detail]) => (
                   <div key={region} className="flex items-baseline gap-4 border-b border-on-dark/10 pb-3">

@@ -1,13 +1,13 @@
 /**
  * All Wingspan Innovations copy as structured data.
- * Sourced verbatim from https://wingspan.pk (Home / About / Services / Contact).
- * Restructured for the v1.0 plan; copy itself untouched.
+ * Sourced from the 2026 brand/content overhaul (aviation consultancy,
+ * management & technical advisory positioning).
  */
 
 export const brand = {
   name: "Wingspan Innovations",
   shortName: "Wingspan",
-  tagline: "Over 40 Years of Experience in the Aviation Industry",
+  tagline: "Bringing Aviation Innovation to Certified Reality.",
   since: 1985, // approximate based on "40+ years of experience"; client to confirm
 } as const;
 
@@ -19,181 +19,304 @@ export const nav = [
 ] as const;
 
 export const hero = {
-  eyebrow: "Wingspan Innovations · Over 40 years in aviation",
+  eyebrow: "Wingspan Innovations · Aviation Consultancy & Advisory",
   headline: [
-    { word: "LET", scale: "sm" },
-    { word: "US", scale: "xs" },
-    { word: "PARTNER", scale: "xl" },
-    { word: "WITH", scale: "xs" },
-    { word: "YOUR", scale: "sm" },
-    { word: "BUSINESS", scale: "xl" },
+    { word: "BRINGING", scale: "sm" },
+    { word: "AVIATION", scale: "xl" },
+    { word: "INNOVATION", scale: "xl" },
+    { word: "TO", scale: "xs" },
+    { word: "CERTIFIED", scale: "xl" },
+    { word: "REALITY", scale: "xl" },
   ] as const,
-  subhead: "Aviation, manufacturing, construction, and supply project management across Pakistan and the wider region.",
+  subhead:
+    "End-to-end aviation consultancy, from airline establishment and certification to fleet planning, airports, safety, and training, across Pakistan, the Middle East, Africa, and beyond.",
   cta: { label: "Schedule a Free Consultation", href: "/contact" },
 } as const;
 
 export const heritageAnchor = {
   body:
-    "Wingspan Innovations is a leading consultancy project management services company recently established to revolutionize the aviation, manufacturing, construction, and supply sectors in Pakistan.",
+    "Wingspan Innovations is a leading aviation consultancy, management, and technical advisory firm established to support airlines, airports, aviation organizations, government institutions, defence establishments, and private investors in achieving operational excellence, regulatory compliance, and sustainable growth.",
   excerpt:
-    "We deliver top-tier, tailored project management solutions across diverse industries, from complex aviation scenarios to intricate manufacturing and supply chain logistics.",
+    "Founded by aviation professionals with decades of senior leadership experience in military and commercial aviation, we deliver comprehensive solutions throughout the aviation lifecycle, from concept development and certification to operational management, expansion, modernization, and long-term sustainability.",
 } as const;
 
 /**
- * Services — 5 pillars, in order of importance.
- * Verbatim copy from wingspan.pk/services/.
+ * Services — 8 core practices, in order of importance.
+ * Copy from the 2026 "Our Core Services" content document.
  */
 export const services = [
   {
     number: "01",
-    slug: "aviation-infrastructure",
-    name: "Aviation Infrastructure",
+    slug: "airline-establishment-certification",
+    name: "Airline Establishment & Certification",
     headline: [
-      { word: "AIRPORT", scale: "xl" },
-      { word: "BY", scale: "xs" },
-      { word: "DESIGN", scale: "xl" },
+      { word: "FROM", scale: "xs" },
+      { word: "VISION", scale: "xl" },
+      { word: "TO", scale: "xs" },
+      { word: "CERTIFICATION", scale: "xl" },
     ],
-    short: "Unparalleled expertise in airport design, construction, and maintenance.",
+    short:
+      "Supporting investors, entrepreneurs, and aviation organizations through every stage of airline development.",
     full:
-      "Our Aviation Infrastructure & Construction division is dedicated to providing unparalleled expertise in airport design, construction, and maintenance. From runway and taxiway construction to airport lighting systems and approach lights, we ensure your aviation infrastructure meets the highest standards of safety and efficiency.",
+      "We support investors, entrepreneurs, and aviation organizations through every stage of airline development, from startup strategy, feasibility studies, and business planning to licensing, Air Operator Certificate (AOC) certification, and operational readiness. Our teams design the organizational structures, governance, manuals, and compliance frameworks a new operator needs to fly and keep flying.",
     capabilities: [
-      "Runway construction",
-      "Airfield lighting systems",
-      "Approach lighting systems",
-      "Taxiway construction",
-      "Reverse osmosis (RO) plant installation and maintenance",
+      "Airline startup strategy and feasibility studies",
+      "Business planning and financial modelling",
+      "Airline licensing and regulatory approvals",
+      "Air Operator Certificate (AOC) certification support",
+      "Operational readiness and transition programs",
+      "Organizational structure and governance design",
+      "Manuals, procedures, and compliance frameworks",
+      "Route planning and network development",
     ],
-    image: "/images/generated/service-infrastructure.jpg",
+    image: "/images/generated/atmosphere-runway-dawn.jpg",
   },
   {
     number: "02",
-    slug: "aviation-maintenance",
-    name: "Aviation Maintenance",
+    slug: "aircraft-acquisition-fleet-planning",
+    name: "Aircraft Acquisition & Fleet Planning",
     headline: [
-      { word: "AIRWORTHINESS", scale: "xl" },
-      { word: "AS", scale: "xs" },
-      { word: "STANDARD", scale: "xl" },
+      { word: "FLEET", scale: "xl" },
+      { word: "BY", scale: "xs" },
+      { word: "DESIGN", scale: "xl" },
     ],
-    short: "Ensuring the airworthiness of aircraft and components.",
+    short:
+      "Delivering strategic fleet solutions aligned with operational and commercial objectives.",
     full:
-      "The Aviation Maintenance Management unit ensures the airworthiness of aircraft and components. Services include coordination for overhaul, inspections, defect rectification, compliance with airworthiness directives, and logistics management, maintaining a seamless flow of goods, services, and information throughout the supply chain.",
+      "From aircraft selection and technical evaluation to lease negotiations, delivery acceptance, and induction management, we deliver fleet solutions aligned with operational and commercial objectives. We guide fleet modernization and expansion, optimize asset utilization and lifecycle economics, and advise on disposal and transition, ensuring every aircraft decision serves the business plan.",
     capabilities: [
-      "Overhaul coordination",
-      "Inspections and defect rectification",
-      "Airworthiness directive compliance",
-      "Logistics and supply chain management",
-      "Component reliability tracking",
+      "Aircraft selection and technical evaluation",
+      "Fleet modernization and expansion planning",
+      "Aircraft lease and acquisition support",
+      "Contract negotiations and technical due diligence",
+      "Delivery, acceptance, and induction management",
+      "Asset utilization and lifecycle planning",
+      "Fleet economics and performance optimization",
+      "Aircraft disposal and transition advisory",
     ],
-    image: "/images/generated/service-maintenance.jpg",
+    image: "/images/generated/atmosphere-karachi-twilight.jpg",
   },
   {
     number: "03",
-    slug: "airline-operations",
-    name: "Airline Operations",
+    slug: "airline-operations-performance",
+    name: "Airline Operations & Performance Management",
     headline: [
       { word: "OPERATIONS", scale: "xl" },
-      { word: "AND", scale: "xs" },
-      { word: "MANAGEMENT", scale: "xl" },
+      { word: "THAT", scale: "xs" },
+      { word: "PERFORM", scale: "xl" },
     ],
-    short: "Operational and financial management, marketing, and customer service.",
+    short: "Enhancing operational efficiency, reliability, and profitability.",
     full:
-      "Our Airline Management division oversees all aspects of airline operations, including operational and financial management, marketing, and customer service. We aim to set industry benchmarks in efficiency and customer satisfaction, ensuring smooth and successful airline operations.",
+      "Our operations practice strengthens flight operations, ground handling, crew management, and dispatch and operational control. We develop operations manuals and SOPs, build performance monitoring and KPI frameworks, and prepare carriers for crisis and contingency scenarios, enhancing efficiency, reliability, and profitability across the operation.",
     capabilities: [
-      "Operational management",
-      "Financial management",
-      "Marketing strategy",
-      "Customer service operations",
-      "Crew planning and scheduling",
+      "Flight operations management",
+      "Ground operations optimization",
+      "Crew management systems",
+      "Dispatch and operational control systems",
+      "Operations manuals and SOP development",
+      "Performance monitoring and KPI frameworks",
+      "Operational efficiency enhancement",
+      "Crisis and contingency planning",
     ],
     image: "/images/generated/service-operations.jpg",
   },
   {
     number: "04",
-    slug: "aviation-software-ai",
-    name: "Aviation Software & AI",
+    slug: "aviation-safety-quality-compliance",
+    name: "Aviation Safety, Quality & Regulatory Compliance",
     headline: [
-      { word: "SOFTWARE", scale: "xl" },
-      { word: "AND", scale: "xs" },
-      { word: "AI", scale: "xl" },
+      { word: "SAFETY", scale: "xl" },
+      { word: "BEYOND", scale: "xs" },
+      { word: "COMPLIANCE", scale: "xl" },
     ],
-    short: "Interactive avionics, support systems, and AI-driven operational tools.",
+    short:
+      "Building resilient organizations through proactive safety management and compliance assurance.",
     full:
-      "Our Aviation Software Management segment develops and manages interactive avionics, aircraft support systems, and managerial software. Leveraging cutting-edge AI technology, we enhance operational efficiency and reduce maintenance challenges through informed decision-making processes.",
+      "We build resilient aviation organizations through Safety Management Systems, aviation risk management, and quality assurance programs. Our specialists conduct regulatory compliance audits, safety investigations, and root cause analyses, develop occurrence reporting systems and operational risk assessments, and cultivate the safety culture that keeps operations trustworthy.",
     capabilities: [
-      "Interactive avionics development",
-      "Aircraft support systems",
-      "Managerial software platforms",
-      "AI-driven predictive maintenance",
-      "Decision-support tooling",
+      "Safety Management Systems (SMS)",
+      "Aviation risk management",
+      "Quality Assurance Programs",
+      "Regulatory compliance audits",
+      "Safety investigations and root cause analysis",
+      "Safety culture development",
+      "Occurrence reporting systems",
+      "Operational risk assessments",
+    ],
+    image: "/images/generated/service-airport.jpg",
+  },
+  {
+    number: "05",
+    slug: "airport-development-management",
+    name: "Airport Development & Management",
+    headline: [
+      { word: "MASTER", scale: "sm" },
+      { word: "PLAN", scale: "xl" },
+      { word: "TO", scale: "xs" },
+      { word: "GATE", scale: "xl" },
+    ],
+    short:
+      "Strategic and operational expertise for airport infrastructure and services.",
+    full:
+      "From airport master planning and infrastructure development advisory to Operational Readiness and Airport Transfer (ORAT), we prepare airports to open well and run better. We enhance passenger experience and facilitation, strengthen safety and security oversight, and build the governance, management systems, and stakeholder coordination modern airports demand.",
+    capabilities: [
+      "Airport master planning",
+      "Infrastructure development advisory",
+      "Operational Readiness and Airport Transfer (ORAT)",
+      "Passenger experience and facilitation enhancement",
+      "Airport safety and security oversight",
+      "Operational efficiency improvement",
+      "Airport governance and management systems",
+      "Stakeholder coordination and integration",
+    ],
+    image: "/images/generated/service-infrastructure.jpg",
+  },
+  {
+    number: "06",
+    slug: "aviation-training-human-capital",
+    name: "Aviation Training & Human Capital Development",
+    headline: [
+      { word: "READY", scale: "sm" },
+      { word: "FOR", scale: "xs" },
+      { word: "COMMAND", scale: "xl" },
+    ],
+    short: "Developing future-ready aviation professionals and leaders.",
+    full:
+      "We develop future-ready aviation professionals through executive leadership programs, flight operations and safety training, and competency-based training systems. From technical workforce development to human resource strategy and training academy establishment and accreditation, we build the organizational capability aviation growth depends on.",
+    capabilities: [
+      "Executive aviation leadership programs",
+      "Flight operations and safety training",
+      "Aviation management development",
+      "Technical workforce training",
+      "Competency-based training systems",
+      "Human resource development strategies",
+      "Organizational capability enhancement",
+      "Training academy establishment and accreditation",
     ],
     image: "/images/generated/service-software.jpg",
   },
   {
-    number: "05",
-    slug: "airport-management",
-    name: "Airport Management",
+    number: "07",
+    slug: "aviation-logistics-supply-chain",
+    name: "Aviation Logistics & Supply Chain Management",
     headline: [
-      { word: "DAILY", scale: "xs" },
-      { word: "AIRPORT", scale: "xl" },
-      { word: "OPERATIONS", scale: "xl" },
+      { word: "RIGHT", scale: "sm" },
+      { word: "PART,", scale: "xl" },
+      { word: "ON", scale: "xs" },
+      { word: "TIME", scale: "xl" },
     ],
-    short: "Day-to-day oversight of local and international airports.",
+    short:
+      "Ensuring operational continuity through effective logistics and support systems.",
     full:
-      "The Airport Management section oversees daily operations at both local and international airports, ensuring adherence to regulations, safety standards, and exceptional customer service. Our expertise includes facilities management, security management, air traffic control, customer service, financial management, regulatory compliance, emergency response planning, and environmental management.",
+      "Our logistics practice keeps fleets flying: spares supportability analysis, aviation supply chain management, inventory optimization, and maintenance logistics planning. We provide procurement support, technical services management, and lifecycle support solutions, backed by logistics readiness assessments that ensure operational continuity.",
     capabilities: [
-      "Facilities management",
-      "Security management",
-      "Air traffic control",
-      "Regulatory compliance",
-      "Emergency response planning",
-      "Environmental management",
+      "Spares supportability analysis",
+      "Aviation supply chain management",
+      "Inventory optimization",
+      "Maintenance logistics planning",
+      "Procurement support",
+      "Technical services management",
+      "Lifecycle support solutions",
+      "Logistics readiness assessments",
     ],
-    image: "/images/generated/service-airport.jpg",
+    image: "/images/generated/service-maintenance.jpg",
+  },
+  {
+    number: "08",
+    slug: "defence-aerospace-strategic-advisory",
+    name: "Defence, Aerospace & Strategic Advisory",
+    headline: [
+      { word: "DEFENCE", scale: "xl" },
+      { word: "TO", scale: "xs" },
+      { word: "DIPLOMACY", scale: "xl" },
+    ],
+    short:
+      "Leveraging extensive experience in defence aviation, strategic planning, and international engagement.",
+    full:
+      "Drawing on decades of senior military aviation leadership, we advise on defence aviation, aerospace projects, and national aviation policy. Our work spans strategic planning and capability development, defence-industrial partnerships, government stakeholder engagement, and aviation diplomacy, supporting international cooperation at the highest levels.",
+    capabilities: [
+      "Defence aviation consultancy",
+      "Aerospace project advisory",
+      "National aviation policy support",
+      "Strategic planning and capability development",
+      "International aviation cooperation",
+      "Defence-industrial partnerships",
+      "Government stakeholder engagement",
+      "Aviation diplomacy and strategic communications",
+    ],
+    image: "/images/generated/heritage-bw-hangar.jpg",
   },
 ] as const;
 
 export const specializedServices = [
-  "Reverse Osmosis (RO) Plant Installation & Maintenance",
-  "Laterite",
-  "Garment-on-Hanger Beams",
-  "Pilot Selection",
-  "Pilots Training",
-  "Technicians Training",
+  "Airline Startup, Certification & Regulatory Advisory",
+  "Aircraft Acquisition, Leasing & Fleet Modernization",
+  "Aviation Safety Investigation & Risk Management",
+  "Airport Operational Readiness and Transfer (ORAT)",
+  "Aviation Digital Transformation & Technology Integration",
+  "Aviation Project Management & Program Delivery",
+  "Spares Supportability & Aviation Logistics Solutions",
+  "Defence & Aerospace Consultancy",
+  "Aviation Academies & Training Institutions Development",
+  "MRO Planning, Development & Optimization",
+  "Unmanned Aircraft Systems (UAS) & Drone Operations",
+  "Aviation Policy, Governance & Strategic Planning",
+  "Aviation Infrastructure & Airport Development",
+  "Crisis Management, Emergency Response & Business Continuity Planning",
+  "International Aviation Partnerships & Investment Facilitation",
 ] as const;
 
 export const philosophy = {
   quote:
-    "Our goal is to become the most trusted global partner, known for our expertise, reliability, and adaptability, transforming the way projects are managed and contributing to a more advanced and efficient industrial landscape.",
+    "To deliver world-class aviation consultancy, management, and technical solutions that empower organizations to achieve operational excellence, regulatory compliance, business sustainability, and long-term growth.",
   attribution: "Wingspan Innovations · Our Mission",
 } as const;
 
 export const about = {
   intro:
-    "Wingspan Innovations is a leading consultancy project management services company recently established to revolutionize the aviation, manufacturing, construction, and supply sectors in Pakistan.",
+    "Wingspan Innovations is a leading aviation consultancy, management, and technical advisory firm established to support airlines, airports, aviation organizations, government institutions, defence establishments, and private investors in achieving operational excellence, regulatory compliance, and sustainable growth.",
   body: [
-    "Our unwavering commitment to excellence drives us to deliver top-tier, tailored project management solutions across these diverse industries. Whether managing complex aviation scenarios, intricate manufacturing processes, or coordinating supply chain logistics, our seasoned team ensures seamless execution from inception to completion.",
-    "With a reputation for excellence and a track record leading to success, we are the partner of choice for manufacturers, construction firms, and supply chain stakeholders aiming to elevate their projects to new heights of efficiency and success.",
-    "Our comprehensive service offerings include meticulous airport management, expert aviation infrastructure and construction, efficient airline operation and management, rigorous aviation maintenance management, and innovative aviation software and AI management. By integrating cutting-edge technology and maintaining the highest standards of safety, customer service, and operational efficiency, Wingspan Innovations is poised to be a trailblazer in the industry.",
+    "Founded by aviation professionals with decades of senior leadership experience in military and commercial aviation, Wingspan Innovations delivers comprehensive solutions throughout the aviation lifecycle, from concept development and certification to operational management, expansion, modernization, and long-term sustainability.",
+    "Our expertise spans airline establishment, regulatory approvals, aircraft acquisition, operational readiness, aviation safety, airport planning, human capital development, logistics support, aviation technology, and strategic business transformation.",
+    "Combining global best practices with practical operational experience, we provide innovative, cost-effective, and results-oriented solutions tailored to the unique requirements of every client.",
   ],
   mission: {
     eyebrow: "Our Mission",
-    body: "Our goal is to become the most trusted global partner, known for our expertise, reliability, and adaptability, transforming the way projects are managed and contributing to a more advanced and efficient industrial landscape.",
+    body: "To deliver world-class aviation consultancy, management, and technical solutions that empower organizations to achieve operational excellence, regulatory compliance, business sustainability, and long-term growth.",
   },
   vision: {
     eyebrow: "Our Vision",
-    body: "The vision of Wingspan Innovations is to establish itself as the preeminent leader in project management, fundamentally transforming the aviation, manufacturing, construction, and supply sectors through unparalleled innovation and a rigorous commitment to excellence. We strive to set new industry benchmarks by providing bespoke solutions that drive efficiency and success, underpinned by the integration of advanced technologies such as artificial intelligence and interactive avionics. Our aspiration is to be recognized globally as the most trusted and esteemed partner, distinguished by our profound expertise, unwavering reliability, and exceptional adaptability.",
+    body: "To be the region's most trusted aviation consultancy and management organization, recognized for professional excellence, innovation, integrity, and transformative aviation solutions.",
   },
 } as const;
 
+export const whyChoose = {
+  eyebrow: "Why Choose Wingspan Innovations",
+  items: [
+    "Led by senior aviation professionals with decades of command, operational, and management experience",
+    "Unique expertise spanning military aviation, commercial airlines, airport operations, and aviation regulation",
+    "End-to-end airline establishment and certification capabilities",
+    "Proven experience in aviation safety, quality assurance, and operational excellence",
+    "Strategic expertise in aircraft acquisition, fleet planning, and logistics support",
+    "Strong stakeholder engagement across government, regulatory, defence, and private sectors",
+    "Practical, implementation-focused solutions rather than theoretical recommendations",
+    "Unwavering commitment to professionalism, integrity, safety, and client success",
+  ],
+} as const;
+
+export const message = {
+  eyebrow: "Message",
+  paragraphs: [
+    "The aviation industry is undergoing unprecedented transformation, creating both significant opportunities and complex challenges for airlines, airports, investors, and aviation stakeholders.",
+    "Wingspan Innovations was established to bridge the gap between strategic vision and operational execution. Drawing upon decades of leadership experience in aviation operations, airline management, safety oversight, training, logistics, international cooperation, and organizational transformation, we help our clients navigate complexity and achieve sustainable success.",
+    "Our philosophy is simple: we do not merely provide advice. We work alongside our clients as trusted partners, delivering practical solutions, measurable outcomes, and long-term value.",
+  ],
+  closing:
+    "At Wingspan Innovations, excellence, integrity, innovation, and safety remain at the heart of everything we do.",
+} as const;
+
 export const contact = {
-  phone: ["+92-321-128-5511", "+92-21-35840214", "+92-345-0085511"],
-  email: "hello@wingspan.pk",
-  address: {
-    line1: "111/2, Street 25",
-    line2: "Main Khayaban-e-Roomi",
-    line3: "DHA Phase-8, Karachi",
-    country: "Pakistan",
-  },
+  email: "info@wingspaninnovations.com",
   hours: [
     { label: "Mon – Sat", value: "09:30 – 18:30" },
     { label: "Sunday", value: "08:00 – 11:30" },

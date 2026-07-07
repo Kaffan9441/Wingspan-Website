@@ -27,12 +27,12 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Wingspan Innovations · Aviation Consultancy · Karachi",
   description:
-    "Over 40 years of expertise in aviation infrastructure, maintenance, airline operations, software, and airport management. Karachi, Pakistan.",
+    "Bringing Aviation Innovation to Certified Reality. End-to-end aviation consultancy: airline establishment, certification, fleet planning, airport development, safety, training, and strategic advisory. Karachi, Pakistan.",
   metadataBase: new URL("https://wingspan.pk"),
   openGraph: {
     title: "Wingspan Innovations",
     description:
-      "Over 40 years of expertise in aviation infrastructure, maintenance, airline operations, software, and airport management.",
+      "Bringing Aviation Innovation to Certified Reality. End-to-end aviation consultancy across Pakistan, the Middle East, Africa, and beyond.",
     type: "website",
     locale: "en_US",
   },

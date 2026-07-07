@@ -7,12 +7,16 @@ import { hero } from "@/lib/content";
 
 type Scale = "xs" | "sm" | "md" | "lg" | "xl";
 
+/**
+ * Mobile min for xl is tuned so the longest headline word ("INNOVATION",
+ * 10 chars) fits a 375px viewport with 20px padding each side ≈ 335px usable.
+ */
 const scaleMap: Record<Scale, string> = {
   xs: "text-[clamp(0.9rem,1.6vw,1.5rem)]",
   sm: "text-[clamp(1.2rem,2.4vw,2.2rem)]",
   md: "text-[clamp(2rem,4vw,3.6rem)]",
   lg: "text-[clamp(3rem,6.4vw,5.8rem)]",
-  xl: "text-[clamp(3.8rem,9vw,8rem)]",
+  xl: "text-[clamp(3.4rem,9vw,8rem)]",
 };
 
 export function HomeHero() {
@@ -106,7 +110,7 @@ export function HomeHero() {
 
           <h1
             ref={headlineRef}
-            className="display font-medium uppercase leading-[0.9] md:leading-[0.92] text-balance flex flex-wrap items-baseline gap-x-[0.2em] gap-y-1 text-on-dark"
+            className="display font-medium uppercase leading-[1.06] md:leading-[1.02] text-balance flex flex-wrap items-baseline gap-x-[0.2em] gap-y-2 text-on-dark"
           >
             {hero.headline.map(({ word, scale }, i) => (
               <span

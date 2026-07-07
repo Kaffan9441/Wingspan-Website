@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { about, hero } from "@/lib/content";
+import { about, hero, message, whyChoose } from "@/lib/content";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { HeritageScrapbook } from "@/components/sections/HeritageScrapbook";
 
@@ -68,8 +68,63 @@ export default function AboutPage() {
             <div className="eyebrow text-muted tracking-[0.22em] mb-4">
               · {about.vision.eyebrow.toUpperCase()} ·
             </div>
-            <p className="text-ink/85 text-[15px] md:text-[16px] leading-[1.7]">
+            <p className="display text-ink text-[clamp(1.2rem,2.6vw,1.9rem)] leading-[1.3] tracking-[-0.018em]">
               {about.vision.body}
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Why choose Wingspan */}
+      <section className="bg-paper text-ink pb-16 md:pb-32 px-5 md:px-12">
+        <div className="max-w-[1280px] mx-auto">
+          <ScrollReveal>
+            <div className="eyebrow text-muted tracking-[0.22em] mb-5 md:mb-6">
+              · WHY WINGSPAN ·
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.08}>
+            <h2 className="display uppercase font-semibold text-[clamp(1.8rem,5vw,4rem)] leading-[0.95] tracking-[-0.022em] max-w-[24ch] mb-10 md:mb-12">
+              Why choose Wingspan Innovations?
+            </h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2 md:gap-y-4">
+            {whyChoose.items.map((item, i) => (
+              <ScrollReveal key={item} delay={i * 0.03}>
+                <div className="flex items-baseline gap-4 py-4 border-b border-[var(--hairline)]">
+                  <span className="eyebrow text-metallic shrink-0" aria-hidden>
+                    ✓
+                  </span>
+                  <span className="text-ink/85 text-[14px] md:text-[15px] leading-[1.6]">
+                    {item}
+                  </span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Message */}
+      <section className="bg-charcoal text-on-dark py-20 md:py-32 px-5 md:px-12">
+        <div className="max-w-[900px] mx-auto">
+          <ScrollReveal>
+            <div className="eyebrow text-on-dark/70 tracking-[0.22em] mb-8 md:mb-10">
+              · {message.eyebrow.toUpperCase()} ·
+            </div>
+          </ScrollReveal>
+          <div className="space-y-6 md:space-y-8">
+            {message.paragraphs.map((p, i) => (
+              <ScrollReveal key={i} delay={0.08 + i * 0.06}>
+                <p className="text-on-dark/85 text-[15px] md:text-[17px] leading-[1.75]">
+                  {p}
+                </p>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal delay={0.3}>
+            <p className="display italic text-[clamp(1.2rem,2.6vw,2rem)] leading-[1.3] text-on-dark mt-10 md:mt-14">
+              {message.closing}
             </p>
           </ScrollReveal>
         </div>

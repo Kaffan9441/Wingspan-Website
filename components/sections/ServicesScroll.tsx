@@ -18,14 +18,14 @@ export function ServicesScroll() {
         </ScrollReveal>
         <ScrollReveal delay={0.08}>
           <h2 className="display uppercase font-semibold text-ink text-[clamp(2.2rem,7vw,6rem)] leading-[0.95] tracking-[-0.025em] max-w-[16ch]">
-            Five practices.
+            Eight practices.
             <br />
             One standard.
           </h2>
         </ScrollReveal>
       </div>
 
-      {/* Five full-bleed chapter moments */}
+      {/* Eight full-bleed chapter moments */}
       <div>
         {services.map((s, i) => {
           const reversed = i % 2 === 1;
@@ -39,7 +39,7 @@ export function ServicesScroll() {
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${s.image})` }}
-                aria-label={`${s.name} — editorial photograph`}
+                aria-label={`${s.name} editorial photograph`}
                 role="img"
               />
 

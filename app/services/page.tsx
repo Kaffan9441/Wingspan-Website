@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 export const metadata: Metadata = {
   title: "Services · Wingspan Innovations",
   description:
-    "Aviation Infrastructure · Aviation Maintenance · Airline Operations · Aviation Software & AI · Airport Management. Five practices, one standard.",
+    "Airline Establishment & Certification · Aircraft Acquisition & Fleet Planning · Airline Operations · Safety & Compliance · Airport Development · Training · Logistics · Defence & Strategic Advisory. Eight practices, one standard.",
 };
 
 export default function ServicesPage() {
@@ -29,7 +29,7 @@ export default function ServicesPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
             <h1 className="display uppercase font-semibold text-[clamp(2.4rem,8vw,6.5rem)] leading-[0.92] tracking-[-0.022em] max-w-[14ch]">
-              Five practices.
+              Eight practices.
               <br />
               One standard.
             </h1>
@@ -118,19 +118,21 @@ export default function ServicesPage() {
         <div className="max-w-[1280px] mx-auto">
           <ScrollReveal>
             <div className="eyebrow text-muted tracking-[0.22em] mb-5 md:mb-6">
-              · WE ALSO OFFER ·
+              · SPECIALIZED ADVISORY ·
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
             <h2 className="display uppercase font-semibold text-[clamp(1.8rem,5vw,4rem)] leading-[0.95] tracking-[-0.022em] max-w-[20ch] mb-10 md:mb-12">
-              Specialized capabilities.
+              Specialized advisory services.
             </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-2 md:gap-y-4">
             {specializedServices.map((item, i) => (
               <ScrollReveal key={item} delay={i * 0.03}>
                 <div className="flex items-baseline gap-3 py-3 border-b border-[var(--hairline)]">
-                  <span className="eyebrow text-metallic">{`0${i + 1}`}</span>
+                  <span className="eyebrow text-metallic">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <span className="text-ink/85 text-[14px] md:text-[15px]">{item}</span>
                 </div>
               </ScrollReveal>

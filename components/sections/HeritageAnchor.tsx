@@ -25,7 +25,7 @@ export function HeritageAnchor() {
             </ScrollReveal>
             <ScrollReveal delay={0.08}>
               <h2 className="display text-on-dark font-medium text-[clamp(1.5rem,2.8vw,2.4rem)] leading-[1.15] tracking-[-0.018em] mb-6 md:mb-8 max-w-[20ch]">
-                Four decades of operational depth in aviation.
+                Decades of command experience in military and commercial aviation.
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.16}>
