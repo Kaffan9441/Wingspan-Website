@@ -5,8 +5,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact · Wingspan Innovations",
-  description:
-    "Schedule a free consultation. Karachi, Pakistan. Mon-Sat 9:30am-6:30pm.",
+  description: "Schedule a free consultation. Karachi, Pakistan.",
 };
 
 export default function ContactPage() {
@@ -38,23 +37,8 @@ export default function ContactPage() {
       {/* Contact grid */}
       <section className="bg-paper text-ink py-16 md:py-32 px-5 md:px-12">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-          {/* Hours */}
-          <ScrollReveal className="lg:col-span-3">
-            <div className="eyebrow text-muted tracking-[0.22em] mb-4 md:mb-5">
-              · OFFICE HOURS ·
-            </div>
-            <ul className="space-y-3">
-              {contact.hours.map((h) => (
-                <li key={h.label} className="flex justify-between text-[14px] md:text-[15px] border-b border-[var(--hairline)] pb-2">
-                  <span className="text-ink">{h.label}</span>
-                  <span className="font-mono text-[12px] md:text-[13px] text-muted">{h.value}</span>
-                </li>
-              ))}
-            </ul>
-          </ScrollReveal>
-
           {/* Contact info */}
-          <ScrollReveal delay={0.06} className="lg:col-span-3">
+          <ScrollReveal delay={0.06} className="lg:col-span-4">
             <div className="eyebrow text-muted tracking-[0.22em] mb-4 md:mb-5">
               · DIRECTLY ·
             </div>
@@ -69,7 +53,7 @@ export default function ContactPage() {
           </ScrollReveal>
 
           {/* Form */}
-          <ScrollReveal delay={0.12} className="lg:col-span-6">
+          <ScrollReveal delay={0.12} className="lg:col-span-8">
             <div className="eyebrow text-muted tracking-[0.22em] mb-4 md:mb-5">
               · TELL US ABOUT YOUR PROJECT ·
             </div>

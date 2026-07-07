@@ -42,13 +42,17 @@ export function MixedScaleHeadline({
 }) {
   return (
     <h1
-      className={`display font-medium uppercase leading-[0.92] text-balance flex flex-wrap items-baseline gap-x-[0.22em] gap-y-1 ${className}`}
+      className={`display font-medium uppercase leading-[0.92] text-balance flex flex-wrap items-baseline gap-y-1 ${className}`}
     >
-      {words.map(({ word, scale }, i) =>
-        reveal ? (
+      {/* Word gap via mr in em on each span: em tracks the WORD's own font size,
+          so spacing stays proportional even between two xl words. A gap-x on the
+          container would use the h1's base font size and render ~3px. */}
+      {words.map(({ word, scale }, i) => {
+        const spacing = i < words.length - 1 ? "mr-[0.28em]" : "";
+        return reveal ? (
           <motion.span
             key={`${word}-${i}`}
-            className={`${scaleMap[scale]} inline-block align-baseline`}
+            className={`${scaleMap[scale]} inline-block align-baseline ${spacing}`}
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -62,12 +66,12 @@ export function MixedScaleHeadline({
         ) : (
           <span
             key={`${word}-${i}`}
-            className={`${scaleMap[scale]} inline-block align-baseline`}
+            className={`${scaleMap[scale]} inline-block align-baseline ${spacing}`}
           >
             {word}
           </span>
-        )
-      )}
+        );
+      })}
     </h1>
   );
 }

@@ -110,13 +110,19 @@ export function HomeHero() {
 
           <h1
             ref={headlineRef}
-            className="display font-medium uppercase leading-[1.06] md:leading-[1.02] text-balance flex flex-wrap items-baseline gap-x-[0.2em] gap-y-2 text-on-dark"
+            className="display font-medium uppercase leading-[1.06] md:leading-[1.02] text-balance flex flex-wrap items-baseline gap-y-2 text-on-dark"
           >
+            {/* Word gap via mr in em on each span: em tracks the WORD's own font
+                size, so the space stays proportional even between two xl words.
+                (A gap-x on the container would use the h1's base font size and
+                render ~3px at display sizes.) */}
             {hero.headline.map(({ word, scale }, i) => (
               <span
                 key={`${word}-${i}`}
                 data-word
-                className={`${scaleMap[scale]} inline-block align-baseline`}
+                className={`${scaleMap[scale]} inline-block align-baseline ${
+                  i < hero.headline.length - 1 ? "mr-[0.28em]" : ""
+                }`}
                 style={{ opacity: 0 }}
               >
                 {word}

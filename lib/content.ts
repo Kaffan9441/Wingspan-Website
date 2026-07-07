@@ -317,11 +317,6 @@ export const message = {
 
 export const contact = {
   email: "info@wingspaninnovations.com",
-  hours: [
-    { label: "Mon – Sat", value: "09:30 – 18:30" },
-    { label: "Sunday", value: "08:00 – 11:30" },
-    { label: "Holidays", value: "08:00 – 15:00" },
-  ],
   social: {
     facebook: "#",
     twitter: "#",

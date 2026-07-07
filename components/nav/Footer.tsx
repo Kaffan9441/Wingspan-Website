@@ -20,7 +20,7 @@ export function Footer() {
             className="w-[88px] h-auto"
           />
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-12">
+        <div className="grid grid-cols-2 gap-10 md:gap-12">
           <div>
             <div className="eyebrow text-muted mb-4">Wingspan</div>
             <ul className="space-y-2.5">
@@ -51,19 +51,6 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <div className="eyebrow text-muted mb-4">Hours</div>
-            <ul className="space-y-2.5 text-[15px] text-ink/85">
-              {contact.hours.map((h) => (
-                <li key={h.label} className="flex justify-between gap-4">
-                  <span>{h.label}</span>
-                  <span className="font-mono text-[13px] text-muted">
-                    {h.value}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         <div className="hairline mt-12" />
