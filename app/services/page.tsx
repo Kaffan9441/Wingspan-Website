@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { services, specializedServices, hero } from "@/lib/content";
+import { services, specializedServices, buyAircraft, hero } from "@/lib/content";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Services · Wingspan Innovations",
   description:
-    "Airline Establishment & Certification · Aircraft Acquisition & Fleet Planning · Airline Operations · Safety & Compliance · Airport Development · Training · Logistics · Defence & Strategic Advisory. Eight practices, one standard.",
+    "Airline Establishment & Certification · Aircraft Acquisition & Fleet Planning · Airline Operations · Safety & Compliance · Aviation IT & AI · Airport Development · Training · Logistics · Defence & Strategic Advisory. Nine practices, one standard.",
 };
 
 export default function ServicesPage() {
@@ -29,7 +29,7 @@ export default function ServicesPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
             <h1 className="display uppercase font-semibold text-[clamp(2.4rem,8vw,6.5rem)] leading-[0.92] tracking-[-0.022em] max-w-[14ch]">
-              Eight practices.
+              Nine practices.
               <br />
               One standard.
             </h1>
@@ -138,6 +138,47 @@ export default function ServicesPage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Buy Your Own Aircraft */}
+      <section className="relative overflow-hidden bg-charcoal text-on-dark">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/images/generated/hero-primary.jpg)" }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25 pointer-events-none" />
+
+        <div className="relative max-w-[1280px] mx-auto px-5 md:px-12 py-24 md:py-44">
+          <ScrollReveal>
+            <div className="eyebrow text-on-dark/80 tracking-[0.22em] mb-6 md:mb-8">
+              · {buyAircraft.eyebrow.toUpperCase()} ·
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.08}>
+            <h2 className="display uppercase font-semibold text-[clamp(2rem,5.6vw,4.6rem)] leading-[1.02] tracking-[-0.022em] max-w-[16ch]">
+              {buyAircraft.headline}
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.14}>
+            <p className="text-on-dark/85 text-[15px] md:text-[18px] leading-[1.6] mt-5 md:mt-6 max-w-[44ch]">
+              {buyAircraft.subline}
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="display italic text-[clamp(1.15rem,2.4vw,1.8rem)] leading-[1.3] text-on-dark mt-8 md:mt-10 max-w-[36ch]">
+              {buyAircraft.promise}
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.26}>
+            <div className="mt-9 md:mt-12">
+              <Link href={buyAircraft.cta.href} className="cta-pill cta-pill--on-dark">
+                {buyAircraft.cta.label}
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

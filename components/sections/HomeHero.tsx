@@ -12,11 +12,11 @@ type Scale = "xs" | "sm" | "md" | "lg" | "xl";
  * 10 chars) fits a 375px viewport with 20px padding each side ≈ 335px usable.
  */
 const scaleMap: Record<Scale, string> = {
-  xs: "text-[clamp(0.9rem,1.6vw,1.5rem)]",
-  sm: "text-[clamp(1.2rem,2.4vw,2.2rem)]",
-  md: "text-[clamp(2rem,4vw,3.6rem)]",
-  lg: "text-[clamp(3rem,6.4vw,5.8rem)]",
-  xl: "text-[clamp(3.4rem,9vw,8rem)]",
+  xs: "text-[clamp(0.85rem,1.45vw,1.35rem)]",
+  sm: "text-[clamp(1.1rem,2.15vw,1.95rem)]",
+  md: "text-[clamp(1.85rem,3.6vw,3.2rem)]",
+  lg: "text-[clamp(2.75rem,5.75vw,5.2rem)]",
+  xl: "text-[clamp(3.1rem,8.1vw,7.2rem)]",
 };
 
 export function HomeHero() {

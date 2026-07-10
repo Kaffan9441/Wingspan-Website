@@ -27,7 +27,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Wingspan Innovations · Aviation Consultancy · Karachi",
   description:
-    "Bringing Aviation Innovation to Certified Reality. End-to-end aviation consultancy: airline establishment, certification, fleet planning, airport development, safety, training, and strategic advisory. Karachi, Pakistan.",
+    "Bringing Aviation Innovation to Certified Reality. End-to-end aviation consultancy: airline establishment, certification, fleet planning, aviation IT & AI, airport development, safety, training, and strategic advisory. Karachi, Pakistan.",
   metadataBase: new URL("https://wingspan.pk"),
   openGraph: {
     title: "Wingspan Innovations",

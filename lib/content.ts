@@ -147,6 +147,33 @@ export const services = [
   },
   {
     number: "05",
+    slug: "aviation-it-ai",
+    name: "Aviation IT & AI",
+    headline: [
+      { word: "FROM", scale: "xs" },
+      { word: "DATA", scale: "xl" },
+      { word: "TO", scale: "xs" },
+      { word: "DECISION", scale: "xl" },
+    ],
+    short:
+      "Advanced digital aviation solutions that enhance safety, efficiency, compliance, and performance.",
+    full:
+      "We provide a comprehensive suite of advanced digital aviation solutions designed to enhance safety, operational efficiency, regulatory compliance, and organizational performance across airlines, airports, and aviation service providers. Our solutions integrate intelligent technologies that support every stage of flight operations, from planning and dispatch to post-flight analysis and continuous safety improvement, accelerating digital transformation in an increasingly competitive global aviation environment.",
+    capabilities: [
+      "Operational management platform with real-time aircraft, crew, and maintenance visibility",
+      "Flight operations tools for scheduling, dispatch, fleet management, and resource allocation",
+      "Data-driven safety analytics and flight performance monitoring",
+      "Fully digital cockpit: electronic manuals, charts, weather, and performance tools",
+      "Real-time global flight tracking, fleet visibility, and historical flight analysis",
+      "Integrated safety management: hazard reporting, risk assessment, investigations, and audits",
+      "Digital learning platform for pilots, engineers, cabin crew, and dispatchers",
+      "Secure portable flight information devices for a paperless cockpit",
+      "Digital navigation and aeronautical information services",
+    ],
+    image: "/images/generated/service-software.jpg",
+  },
+  {
+    number: "06",
     slug: "airport-development-management",
     name: "Airport Development & Management",
     headline: [
@@ -172,7 +199,7 @@ export const services = [
     image: "/images/generated/service-infrastructure.jpg",
   },
   {
-    number: "06",
+    number: "07",
     slug: "aviation-training-human-capital",
     name: "Aviation Training & Human Capital Development",
     headline: [
@@ -193,10 +220,10 @@ export const services = [
       "Organizational capability enhancement",
       "Training academy establishment and accreditation",
     ],
-    image: "/images/generated/service-software.jpg",
+    image: "/images/generated/heritage-bw-engineer.jpg",
   },
   {
-    number: "07",
+    number: "08",
     slug: "aviation-logistics-supply-chain",
     name: "Aviation Logistics & Supply Chain Management",
     headline: [
@@ -222,7 +249,7 @@ export const services = [
     image: "/images/generated/service-maintenance.jpg",
   },
   {
-    number: "08",
+    number: "09",
     slug: "defence-aerospace-strategic-advisory",
     name: "Defence, Aerospace & Strategic Advisory",
     headline: [
@@ -265,6 +292,15 @@ export const specializedServices = [
   "Crisis Management, Emergency Response & Business Continuity Planning",
   "International Aviation Partnerships & Investment Facilitation",
 ] as const;
+
+export const buyAircraft = {
+  eyebrow: "Buy Your Own Aircraft",
+  headline: "It's cheaper to fly than to drive.",
+  subline: "When you factor in time, convenience, and rising fuel costs.",
+  promise:
+    "You Buy, We Propel: Excellence in Maintenance and Operations Guaranteed!",
+  cta: { label: "Talk to us about ownership", href: "/contact" },
+} as const;
 
 export const philosophy = {
   quote:

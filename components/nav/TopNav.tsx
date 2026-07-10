@@ -65,7 +65,7 @@ export function TopNav() {
             width={400}
             height={400}
             priority
-            className={`h-10 md:h-[64px] w-auto transition-opacity duration-300 ${
+            className={`h-12 md:h-[76px] w-auto transition-opacity duration-300 ${
               scrolled ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -75,7 +75,7 @@ export function TopNav() {
             width={400}
             height={400}
             priority
-            className={`absolute left-0 top-1/2 -translate-y-1/2 h-10 md:h-[64px] w-auto transition-opacity duration-300 ${
+            className={`absolute left-0 top-1/2 -translate-y-1/2 h-12 md:h-[76px] w-auto transition-opacity duration-300 ${
               scrolled ? "opacity-0" : "opacity-100"
             }`}
           />

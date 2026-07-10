@@ -18,7 +18,7 @@ export function ServicesScroll() {
         </ScrollReveal>
         <ScrollReveal delay={0.08}>
           <h2 className="display uppercase font-semibold text-ink text-[clamp(2.2rem,7vw,6rem)] leading-[0.95] tracking-[-0.025em] max-w-[16ch]">
-            Eight practices.
+            Nine practices.
             <br />
             One standard.
           </h2>
