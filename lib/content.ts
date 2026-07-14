@@ -352,7 +352,7 @@ export const message = {
 } as const;
 
 export const contact = {
-  email: "info@wingspaninnovations.com",
+  email: "contact@wingspaninnovations.com",
   social: {
     facebook: "#",
     twitter: "#",
