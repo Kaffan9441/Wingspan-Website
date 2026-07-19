@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contact } from "@/lib/content";
+import { contact, canadaOffice } from "@/lib/content";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { ContactForm } from "@/components/sections/ContactForm";
 
@@ -49,6 +49,22 @@ export default function ContactPage() {
               >
                 {contact.email}
               </a>
+            </div>
+
+            <div className="eyebrow text-muted tracking-[0.22em] mt-10 md:mt-12 mb-4 md:mb-5">
+              · OFFICES ·
+            </div>
+            <div className="space-y-5 text-[14px] md:text-[15px]">
+              <div>
+                <div className="eyebrow text-metallic tracking-[0.16em] mb-1">Headquarters</div>
+                <p className="text-ink/75 leading-[1.5]">Karachi, Pakistan</p>
+              </div>
+              <div>
+                <div className="eyebrow text-metallic tracking-[0.16em] mb-1">Canada · Remote</div>
+                <p className="text-ink/75 leading-[1.5]">
+                  {canadaOffice.city}, {canadaOffice.region}
+                </p>
+              </div>
             </div>
           </ScrollReveal>
 

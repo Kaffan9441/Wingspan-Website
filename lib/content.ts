@@ -351,6 +351,36 @@ export const message = {
     "At Wingspan Innovations, excellence, integrity, innovation, and safety remain at the heart of everything we do.",
 } as const;
 
+/**
+ * Canada remote office — North American presence.
+ * Toronto chosen as Canada's largest aviation hub (Toronto Pearson / YYZ)
+ * and the country's financial capital.
+ * To relocate the office, update `city`, `region`, and `coordinates`
+ * (also mirrored as a marker/arc in components/sections/GlobalReach.tsx).
+ */
+export const canadaOffice = {
+  eyebrow: "Now in Canada",
+  city: "Toronto",
+  region: "Ontario, Canada",
+  established: "2026",
+  coordinates: [43.6532, -79.3832] as [number, number],
+  headline: "A North American gateway,\nin Canada's busiest aviation market.",
+  body: [
+    "Wingspan Innovations now operates a remote office in Toronto, Canada's largest aviation hub and financial capital, anchored by Toronto Pearson International (YYZ), one of North America's busiest gateways.",
+    "Our Canadian team extends the firm's reach across North America, bridging time zones between Karachi, the Gulf, and the Americas so clients receive responsive, continuous support wherever they operate.",
+  ],
+  highlights: [
+    ["Major Hub Access", "At the doorstep of Toronto Pearson (YYZ) and Canada's core aviation network"],
+    ["North American Reach", "Advisory and program support for operators across Canada and the US"],
+    ["Time-Zone Bridge", "Continuous coverage spanning Karachi, the Gulf, and the Americas"],
+    ["Remote-First", "A distributed team drawing on senior aviation talent across the region"],
+  ],
+  image: "/images/generated/canada-toronto-office.png",
+  imageAlt:
+    "Toronto skyline at twilight over Lake Ontario, representing Wingspan Innovations' Canadian remote office.",
+  cta: { label: "Connect with our Canada team", href: "/contact" },
+} as const;
+
 export const contact = {
   email: "contact@wingspaninnovations.com",
   social: {

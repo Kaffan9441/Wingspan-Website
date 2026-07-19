@@ -15,6 +15,7 @@ const MARKERS = [
   { id: "london",    location: [51.5074,  -0.1278] as [number, number] },
   { id: "frankfurt", location: [50.1109,   8.6821] as [number, number] },
   { id: "beijing",   location: [39.9042, 116.4074] as [number, number] },
+  { id: "toronto",   location: [43.6532, -79.3832] as [number, number] }, // Canada office
 ];
 
 // Flight arcs originating from Karachi
@@ -25,6 +26,8 @@ const ARCS = [
   { id: "khi-lhr",  from: [24.8607,  67.0011] as [number, number], to: [51.5074,  -0.1278] as [number, number] },
   { id: "dxb-fra",  from: [25.2048,  55.2708] as [number, number], to: [50.1109,   8.6821] as [number, number] },
   { id: "ist-lhr",  from: [41.0082,  28.9784] as [number, number], to: [51.5074,  -0.1278] as [number, number] },
+  { id: "lhr-yyz",  from: [51.5074,  -0.1278] as [number, number], to: [43.6532, -79.3832] as [number, number] },
+  { id: "khi-yyz",  from: [24.8607,  67.0011] as [number, number], to: [43.6532, -79.3832] as [number, number] },
 ];
 
 export function GlobalReach() {
@@ -62,6 +65,7 @@ export function GlobalReach() {
                   ["Middle East", "UAE · Qatar · Saudi Arabia · Oman"],
                   ["Africa", "Advisory & program engagements"],
                   ["Europe", "United Kingdom · Germany · Turkey"],
+                  ["North America", "Toronto, Canada · remote office"],
                 ].map(([region, detail]) => (
                   <div key={region} className="flex items-baseline gap-4 border-b border-on-dark/10 pb-3">
                     <span className="eyebrow text-metallic tracking-[0.18em] min-w-[90px]">{region}</span>

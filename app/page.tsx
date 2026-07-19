@@ -4,6 +4,7 @@ import { ServicesScroll } from "@/components/sections/ServicesScroll";
 import { HeritageScrapbook } from "@/components/sections/HeritageScrapbook";
 import { PhilosophyQuote } from "@/components/sections/PhilosophyQuote";
 import { GlobalReach } from "@/components/sections/GlobalReach";
+import { CanadaOffice } from "@/components/sections/CanadaOffice";
 import { ClosingCinematic } from "@/components/sections/ClosingCinematic";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <HeritageScrapbook />
       <PhilosophyQuote />
       <GlobalReach />
+      <CanadaOffice />
       <ClosingCinematic />
     </>
   );
