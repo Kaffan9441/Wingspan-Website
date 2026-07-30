@@ -18,7 +18,7 @@ export function ServicesScroll() {
         </ScrollReveal>
         <ScrollReveal delay={0.08}>
           <h2 className="display uppercase font-semibold text-ink text-[clamp(2.2rem,7vw,6rem)] leading-[0.95] tracking-[-0.025em] max-w-[16ch]">
-            Nine practices.
+            Ten practices.
             <br />
             One standard.
           </h2>
@@ -84,11 +84,11 @@ export function ServicesScroll() {
 
                     <ScrollReveal delay={0.14}>
                       <Link
-                        href={`/services#${s.slug}`}
+                        href={"cta" in s ? s.cta.href : `/services#${s.slug}`}
                         className="group inline-flex items-baseline gap-3 mt-7 md:mt-10 text-on-dark hover:text-cream transition-colors duration-[160ms] min-h-[44px]"
                       >
                         <span className="eyebrow text-on-dark/70 tracking-[0.22em]">
-                          READ ON
+                          {"cta" in s ? s.cta.label.toUpperCase() : "READ ON"}
                         </span>
                         <span
                           aria-hidden

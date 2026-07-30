@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 export const metadata: Metadata = {
   title: "Services · Wingspan Innovations",
   description:
-    "Airline Establishment & Certification · Aircraft Acquisition & Fleet Planning · Airline Operations · Safety & Compliance · Aviation IT & AI · Airport Development · Training · Logistics · Defence & Strategic Advisory. Nine practices, one standard.",
+    "Airline Establishment & Certification · Aircraft Acquisition & Fleet Planning · Airline Operations · Safety & Compliance · Aviation IT & AI · Aircraft Tires & Supply · Airport Development · Training · Logistics · Defence & Strategic Advisory. Ten practices, one standard.",
 };
 
 export default function ServicesPage() {
@@ -29,7 +29,7 @@ export default function ServicesPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
             <h1 className="display uppercase font-semibold text-[clamp(2.4rem,8vw,6.5rem)] leading-[0.92] tracking-[-0.022em] max-w-[14ch]">
-              Nine practices.
+              Ten practices.
               <br />
               One standard.
             </h1>
@@ -106,6 +106,17 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                   </ScrollReveal>
+
+                  {"cta" in s && (
+                    <ScrollReveal delay={0.26}>
+                      <div className="mt-8 md:mt-10">
+                        <Link href={s.cta.href} className="cta-pill">
+                          {s.cta.label}
+                          <span aria-hidden>→</span>
+                        </Link>
+                      </div>
+                    </ScrollReveal>
+                  )}
                 </div>
               </article>
             );

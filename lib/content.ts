@@ -41,7 +41,7 @@ export const heritageAnchor = {
 } as const;
 
 /**
- * Services — 8 core practices, in order of importance.
+ * Services — 10 core practices, in order of importance.
  * Copy from the 2026 "Our Core Services" content document.
  */
 export const services = [
@@ -174,6 +174,31 @@ export const services = [
   },
   {
     number: "06",
+    slug: "aircraft-tires-supply",
+    name: "Aircraft Tires & Supply",
+    headline: [
+      { word: "PERFORMANCE", scale: "lg" },
+      { word: "AT", scale: "xs" },
+      { word: "EVERY", scale: "sm" },
+      { word: "TOUCHDOWN", scale: "xl" },
+    ],
+    short:
+      "Reliable aircraft tire solutions sourced for commercial, regional, business, and specialized aviation operations.",
+    full:
+      "Wingspan Innovations supplies high-quality aircraft tires selected to meet demanding takeoff, landing, taxi, and operational requirements. From scheduled tire replacements to complete fleet requirements, we provide responsive sourcing, dependable supply, and aviation-focused support to help operators reduce ground time, maintain operational readiness, and keep every aircraft moving safely.",
+    capabilities: [
+      "Commercial, regional, business, and specialized aircraft tires",
+      "Responsive sourcing for scheduled tire replacements",
+      "Complete fleet tire requirements",
+      "Takeoff, landing, and taxi performance-rated selection",
+      "Dependable supply and aviation-focused support",
+      "Reduced ground time and maintained operational readiness",
+    ],
+    cta: { label: "Request a Quote", href: "/contact" },
+    image: "/images/generated/service-tires.jpg",
+  },
+  {
+    number: "07",
     slug: "airport-development-management",
     name: "Airport Development & Management",
     headline: [
@@ -199,7 +224,7 @@ export const services = [
     image: "/images/generated/service-infrastructure.jpg",
   },
   {
-    number: "07",
+    number: "08",
     slug: "aviation-training-human-capital",
     name: "Aviation Training & Human Capital Development",
     headline: [
@@ -223,7 +248,7 @@ export const services = [
     image: "/images/generated/heritage-bw-engineer.jpg",
   },
   {
-    number: "08",
+    number: "09",
     slug: "aviation-logistics-supply-chain",
     name: "Aviation Logistics & Supply Chain Management",
     headline: [
@@ -249,7 +274,7 @@ export const services = [
     image: "/images/generated/service-maintenance.jpg",
   },
   {
-    number: "09",
+    number: "10",
     slug: "defence-aerospace-strategic-advisory",
     name: "Defence, Aerospace & Strategic Advisory",
     headline: [
