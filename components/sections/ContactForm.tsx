@@ -4,23 +4,54 @@ import { useState } from "react";
 import { services } from "@/lib/content";
 
 /**
- * Contact form — wired to a no-op submit handler for now.
- * At build/integration time we'll hook this to Server Actions + Resend (or Supabase).
+ * Contact form — POSTs to /api/contact, which emails the submission via Resend.
  * Hairline-only inputs, no filled buttons.
  */
 export function ContactForm() {
-  const [state, setState] = useState<"idle" | "submitting" | "sent">("idle");
+  const [state, setState] = useState<"idle" | "submitting" | "sent" | "error">(
+    "idle"
+  );
+  const [error, setError] = useState<string>("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (state === "submitting") return;
+    setState("submitting");
+    setError("");
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const payload = await res.json().catch(() => ({}));
+        throw new Error(
+          payload.error || "Something went wrong. Please try again."
+        );
+      }
+      form.reset();
+      setState("sent");
+    } catch (err) {
+      setState("error");
+      setError(err instanceof Error ? err.message : "Something went wrong.");
+    }
+  }
 
   return (
-    <form
-      className="space-y-5"
-      onSubmit={(e) => {
-        e.preventDefault();
-        setState("submitting");
-        // Placeholder — real submission wiring deferred per plan
-        setTimeout(() => setState("sent"), 700);
-      }}
-    >
+    <form className="space-y-5" onSubmit={handleSubmit}>
+      {/* Honeypot — hidden from users; bots that fill it are silently dropped. */}
+      <div className="hidden" aria-hidden>
+        <label>
+          Do not fill this in
+          <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <label className="block">
           <span className="eyebrow text-muted">Name</span>
@@ -62,11 +93,11 @@ export function ContactForm() {
             Select…
           </option>
           {services.map((s) => (
-            <option key={s.slug} value={s.slug}>
+            <option key={s.slug} value={s.name}>
               {s.name}
             </option>
           ))}
-          <option value="other">Other</option>
+          <option value="Other">Other</option>
         </select>
       </label>
 
@@ -83,7 +114,7 @@ export function ContactForm() {
       <div className="pt-4">
         <button
           type="submit"
-          disabled={state === "submitting"}
+          disabled={state === "submitting" || state === "sent"}
           className="cta-pill"
         >
           {state === "sent"
@@ -91,11 +122,19 @@ export function ContactForm() {
             : state === "submitting"
             ? "Sending…"
             : "Send Message"}
-          {state === "idle" ? <span aria-hidden>→</span> : null}
+          {state === "idle" || state === "error" ? (
+            <span aria-hidden>→</span>
+          ) : null}
         </button>
-        <p className="mt-3 text-xs text-muted">
-          We&apos;ll respond within one business day.
-        </p>
+        {state === "error" ? (
+          <p className="mt-3 text-xs text-red-700" role="alert">
+            {error}
+          </p>
+        ) : (
+          <p className="mt-3 text-xs text-muted">
+            We&apos;ll respond within one business day.
+          </p>
+        )}
       </div>
     </form>
   );

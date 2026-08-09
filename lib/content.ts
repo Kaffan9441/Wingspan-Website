@@ -298,6 +298,197 @@ export const services = [
     ],
     image: "/images/generated/heritage-bw-hangar.jpg",
   },
+  {
+    number: "11",
+    slug: "counter-uas-uav-navigation",
+    name: "AI-Enabled Counter-UAS, UAV & Navigation Systems",
+    headline: [
+      { word: "INTELLIGENCE", scale: "lg" },
+      { word: "ACROSS", scale: "xs" },
+      { word: "EVERY", scale: "sm" },
+      { word: "MISSION", scale: "xl" },
+    ],
+    short:
+      "Integrated Counter-UAS, autonomous UAV, advanced avionics and resilient navigation for aviation, airports, critical infrastructure and security operations.",
+    full:
+      "Wingspan Innovations delivers integrated Counter-UAS, autonomous UAV, advanced avionics and resilient navigation solutions for aviation, airports, critical infrastructure, security and specialized operations. Our platform-neutral approach combines Artificial Intelligence, robotics, intelligent sensors, edge computing, digital twins and cybersecurity within one secure, human-controlled operational environment.",
+    sections: [
+      {
+        heading: "AI-Enabled Counter-UAS",
+        tagline: "Detect. Identify. Respond.",
+        intro:
+          "Integrated airspace-protection solutions combine RF detection, radar, acoustic, LiDAR, electro-optical and thermal sensors with AI-powered classification and multi-object tracking.",
+        bullets: [
+          "Drone detection, identification and direction finding",
+          "Multi-sensor fusion and false-alert reduction",
+          "Predictive trajectory and behavioural analysis",
+          "Geofence, loitering and restricted-zone monitoring",
+          "Real-time risk scoring and incident management",
+          "Unified command-and-control integration",
+        ],
+      },
+      {
+        heading: "Autonomous UAV Systems",
+        tagline: "Autonomy Built Around the Operation.",
+        intro:
+          "AI-enabled UAV technologies support inspection, mapping, surveillance, logistics, emergency response and environmental monitoring.",
+        bullets: [
+          "Automated mission and route planning",
+          "Intelligent autopilots and adaptive flight control",
+          "Computer vision and object recognition",
+          "Detect-and-avoid and obstacle navigation",
+          "Automated takeoff, landing and contingency management",
+          "Multi-UAV coordination and fleet supervision",
+        ],
+      },
+      {
+        heading: "UAV Components & Payloads",
+        tagline: "Every Component. Connected by Intelligence.",
+        intro:
+          "Our portfolio supports fixed-wing, rotary-wing, hybrid and autonomous platforms.",
+        bullets: [
+          "AI flight computers and edge processors",
+          "Secure communications and encrypted data links",
+          "EO/IR, multispectral, hyperspectral, radar and LiDAR payloads",
+          "Flight-control, propulsion and smart battery systems",
+          "Intelligent gimbals and stabilization equipment",
+          "Ground-control stations, redundant avionics and safety modules",
+        ],
+      },
+      {
+        heading: "Advanced & Resilient Navigation",
+        tagline: "Precision Beyond a Single Signal.",
+        intro:
+          "High-integrity navigation technologies maintain accurate positioning when satellite signals are degraded, unavailable or unreliable.",
+        bullets: [
+          "Inertial Navigation Systems and IMUs",
+          "Fiber-Optic Gyroscopes and MEMS technologies",
+          "Multi-frequency, multi-constellation GNSS",
+          "Controlled-Reception-Pattern Antennas",
+          "GNSS integrity and interference monitoring",
+          "AI sensor fusion using cameras, radar, LiDAR and inertial data",
+          "Visual, terrain-relative, indoor, surface and underwater navigation",
+        ],
+      },
+      {
+        heading: "Edge AI, Digital Twins & Predictive Maintenance",
+        tagline: "From Live Data to Operational Action.",
+        intro:
+          "Edge AI enables real-time onboard processing, low-latency decisions and continued operation with limited connectivity. Digital twins and predictive analytics support virtual testing, health monitoring and fleet optimization.",
+        bullets: [
+          "Virtual testing and mission simulation",
+          "Sensor-coverage and route validation",
+          "Equipment-health monitoring",
+          "Battery and propulsion forecasting",
+          "Automated fault detection",
+          "Maintenance and fleet optimization",
+        ],
+      },
+      {
+        heading: "Unified AI Command Platform",
+        tagline: "Every Sensor. Every Platform. One View.",
+        intro:
+          "A secure cloud, on-premises or hybrid dashboard can unify airspace activity, UAV missions, navigation health, equipment status, maintenance alerts, geospatial intelligence and AI-generated recommendations. All solutions are structured around explainable AI, cybersecurity, regulatory compliance, human oversight and traceable operational decisions.",
+        bullets: [],
+      },
+    ],
+    closing: "Advanced technology. Trusted intelligence. Operational confidence.",
+    cta: {
+      label: "Discuss your AI, UAV and navigation requirements",
+      href: "/contact",
+    },
+    image: "/images/generated/service-counter-uas.jpg",
+  },
+  {
+    number: "12",
+    slug: "aviation-fuel-infrastructure-epc",
+    name: "Aviation Fuel Infrastructure & EPC",
+    headline: [
+      { word: "FROM", scale: "xs" },
+      { word: "STORAGE", scale: "xl" },
+      { word: "TO", scale: "xs" },
+      { word: "FLIGHT", scale: "xl" },
+    ],
+    short:
+      "Integrated engineering, infrastructure and technical solutions for aviation fuel systems, petroleum facilities and mission-critical assets.",
+    full:
+      "Wingspan Innovations provides end-to-end consultancy, engineering coordination, project management and lifecycle support for aviation fuel and associated infrastructure, combining proven engineering practices with digital monitoring, safety, compliance and operational readiness.",
+    sections: [
+      {
+        heading: "Aviation Fuel & POL Infrastructure",
+        tagline: "",
+        intro: "",
+        bullets: [
+          "Jet A-1, AVGAS and specialized aviation fuel storage systems",
+          "POL bulk storage tanks and fuel farms",
+          "Fuel terminals, pump stations and hydrant/refuelling systems",
+          "Cross-country and terminal pipeline networks",
+          "Tank and pipeline rehabilitation and modernization",
+          "Fuel-system inspection, integrity assessment and maintenance",
+        ],
+      },
+      {
+        heading: "Engineering & EPC Support",
+        tagline: "",
+        intro: "",
+        bullets: [
+          "Feasibility, design and engineering coordination",
+          "Tank fabrication, erection and pipeline installation",
+          "Civil, structural, mechanical and electrical works",
+          "Roads, utility networks, retaining structures and water systems",
+          "Testing, commissioning and operational readiness",
+          "EPC project management and technical procurement",
+        ],
+      },
+      {
+        heading: "Inspection, Quality & Asset Integrity",
+        tagline: "",
+        intro: "",
+        bullets: [
+          "Non-Destructive Testing (NDT) coordination",
+          "Tank and pipeline condition assessment",
+          "Welding, coating and corrosion-control programs",
+          "QA/QC and technical inspection",
+          "Preventive and predictive maintenance",
+          "Lifecycle and asset-integrity management",
+        ],
+      },
+      {
+        heading: "Engineering Materials & Systems",
+        tagline: "",
+        intro: "",
+        bullets: [
+          "Pipes, valves, fittings and associated equipment",
+          "Pumps and petroleum-handling systems",
+          "Industrial coatings and specialty materials",
+          "Mechanical and electrical equipment",
+          "Inspection and testing systems",
+          "Generator and critical-power solutions",
+        ],
+      },
+      {
+        heading: "Smart Infrastructure",
+        tagline: "",
+        intro:
+          "Wingspan integrates IIoT sensors, AI analytics and digital asset monitoring into conventional fuel infrastructure, providing real-time visibility of tank levels, equipment condition, energy consumption, maintenance requirements and operational performance through centralized management dashboards.",
+        bullets: [],
+      },
+      {
+        heading: "Built to International Standards",
+        tagline: "",
+        intro:
+          "Projects are developed around applicable API, ASTM, ASME, NFPA, ISO and aviation regulatory requirements, supported by qualified engineering, inspection and specialist project partners.",
+        bullets: [],
+      },
+    ],
+    closing:
+      "From fuel farm to flight line, Wingspan Innovations connects engineering, technology and operations to deliver infrastructure built for safety, reliability and long-term performance.",
+    cta: {
+      label: "Discuss your fuel infrastructure project",
+      href: "/contact",
+    },
+    image: "/images/generated/service-fuel-infrastructure.jpg",
+  },
 ] as const;
 
 export const specializedServices = [

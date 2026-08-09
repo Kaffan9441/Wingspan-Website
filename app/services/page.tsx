@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 export const metadata: Metadata = {
   title: "Services · Wingspan Innovations",
   description:
-    "Airline Establishment & Certification · Aircraft Acquisition & Fleet Planning · Airline Operations · Safety & Compliance · Aviation IT & AI · Aircraft Tires & Supply · Airport Development · Training · Logistics · Defence & Strategic Advisory. Ten practices, one standard.",
+    "Airline Establishment & Certification · Aircraft Acquisition & Fleet Planning · Airline Operations · Safety & Compliance · Aviation IT & AI · Aircraft Tires & Supply · Airport Development · Training · Logistics · Defence & Strategic Advisory · Counter-UAS, UAV & Navigation · Aviation Fuel Infrastructure & EPC. Twelve practices, one standard.",
 };
 
 export default function ServicesPage() {
@@ -29,7 +29,7 @@ export default function ServicesPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
             <h1 className="display uppercase font-semibold text-[clamp(2.4rem,8vw,6.5rem)] leading-[0.92] tracking-[-0.022em] max-w-[14ch]">
-              Ten practices.
+              Twelve practices.
               <br />
               One standard.
             </h1>
@@ -90,24 +90,26 @@ export default function ServicesPage() {
                     </p>
                   </ScrollReveal>
 
-                  <ScrollReveal delay={0.2}>
-                    <div className="eyebrow text-muted tracking-[0.18em] mt-8 md:mt-10 mb-3">
-                      Capabilities
-                    </div>
-                    <ul className="space-y-2">
-                      {s.capabilities.map((c) => (
-                        <li
-                          key={c}
-                          className="text-ink/85 text-[14px] md:text-[15px] flex items-baseline gap-3"
-                        >
-                          <span className="eyebrow text-metallic text-[10px]">·</span>
-                          {c}
-                        </li>
-                      ))}
-                    </ul>
-                  </ScrollReveal>
+                  {"capabilities" in s && (
+                    <ScrollReveal delay={0.2}>
+                      <div className="eyebrow text-muted tracking-[0.18em] mt-8 md:mt-10 mb-3">
+                        Capabilities
+                      </div>
+                      <ul className="space-y-2">
+                        {s.capabilities.map((c) => (
+                          <li
+                            key={c}
+                            className="text-ink/85 text-[14px] md:text-[15px] flex items-baseline gap-3"
+                          >
+                            <span className="eyebrow text-metallic text-[10px]">·</span>
+                            {c}
+                          </li>
+                        ))}
+                      </ul>
+                    </ScrollReveal>
+                  )}
 
-                  {"cta" in s && (
+                  {"cta" in s && !("sections" in s) && (
                     <ScrollReveal delay={0.26}>
                       <div className="mt-8 md:mt-10">
                         <Link href={s.cta.href} className="cta-pill">
@@ -118,6 +120,62 @@ export default function ServicesPage() {
                     </ScrollReveal>
                   )}
                 </div>
+
+                {"sections" in s && (
+                  <div className="md:col-span-12 md:order-3 mt-6 md:mt-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 md:gap-y-14">
+                      {s.sections.map((sec) => (
+                        <ScrollReveal key={sec.heading}>
+                          <div className="eyebrow text-metallic tracking-[0.18em] mb-2">
+                            {sec.heading}
+                          </div>
+                          {sec.tagline && (
+                            <h3 className="display uppercase font-semibold text-ink text-[clamp(1.3rem,2.4vw,2rem)] leading-[1.05] tracking-[-0.02em] mb-3">
+                              {sec.tagline}
+                            </h3>
+                          )}
+                          {sec.intro && (
+                            <p className="text-ink/85 text-[14px] md:text-[15px] leading-[1.65] max-w-[46ch]">
+                              {sec.intro}
+                            </p>
+                          )}
+                          {sec.bullets.length > 0 && (
+                            <ul className="space-y-2 mt-4">
+                              {sec.bullets.map((b) => (
+                                <li
+                                  key={b}
+                                  className="text-ink/85 text-[14px] md:text-[15px] flex items-baseline gap-3"
+                                >
+                                  <span className="eyebrow text-metallic text-[10px]">·</span>
+                                  {b}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </ScrollReveal>
+                      ))}
+                    </div>
+
+                    {"closing" in s && (
+                      <ScrollReveal delay={0.1}>
+                        <p className="display italic text-ink text-[clamp(1.2rem,2.6vw,1.9rem)] leading-[1.3] tracking-[-0.018em] mt-12 md:mt-16 max-w-[42ch]">
+                          {s.closing}
+                        </p>
+                      </ScrollReveal>
+                    )}
+
+                    {"cta" in s && (
+                      <ScrollReveal delay={0.16}>
+                        <div className="mt-8 md:mt-10">
+                          <Link href={s.cta.href} className="cta-pill">
+                            {s.cta.label}
+                            <span aria-hidden>→</span>
+                          </Link>
+                        </div>
+                      </ScrollReveal>
+                    )}
+                  </div>
+                )}
               </article>
             );
           })}
